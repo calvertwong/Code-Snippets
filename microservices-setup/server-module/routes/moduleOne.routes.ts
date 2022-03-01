@@ -1,5 +1,5 @@
 import express from "express";
-import * as LoginController from "../controllers/moduleOne/productionLogin.controllers";
+import * as LoginController from "../controllers/moduleOne/productionLogin.controller";
 
 const moduleOneRouter = express.Router();
 
