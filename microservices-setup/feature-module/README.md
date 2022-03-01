@@ -1,6 +1,6 @@
 # Overview
 
-This repo is created as a reference to create a NPM package to share reusable code or to create a feature module for a micro-frontend application.
+This repo **(TypeScript)** is created as a reference to create a NPM package to share reusable code or to create a feature module for a micro-frontend application.
 
 This feature module is technically a React application so it will be having `App.tsx` and `index.tsx` that can be use like what you have in a React application.
 
