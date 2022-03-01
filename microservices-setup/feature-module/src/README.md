@@ -11,7 +11,7 @@ The exported routes in `src/index.routes.tsx` will have no any effect on the rou
 
 # Tips
 **Storybook** and **react cosmos** are two great tools for developing components. This reference will be using **react cosmos**.\
-`cosmos.config.json` and `src/__fixtures__` are required for **react cosmos**.
+`src/cosmos.config.json` and `__fixtures__` are required for **react cosmos**.
 
 # Done reading? 
 Now head to microservies-setup/container-module to find out how to link modules together for development and more.
