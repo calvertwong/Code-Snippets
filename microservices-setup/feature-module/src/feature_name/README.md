@@ -1,5 +1,3 @@
-**Read this**
-
 # Overview
 
 This directory will be the root directory of the npm package along with some files from the upper level once the command to generate npm package is executed.
