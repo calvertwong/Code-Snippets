@@ -25,7 +25,7 @@ In other words, the dist folder in the feature modules must exist or the contain
 The dist folder must be re-generated when there is a new change to the code. If new changes are not reflecting in `dist` folder, simply remove the `dist` folder and re-generate the folder again..
 **README** in feature-module repository has some useful tips that can be applied to this container as well, please read that. 
 
-The production build that is generated here can be used too after executing `npm run link`. Tested with IIS Manager.
+The production build that is generated here can be used too after executing `npm run link`. Tested and hosted on IIS Manager.
 
 # Done reading?
 Now head to microservices-setup/feature-module to find out how to start developing feature modules for this container and more/
