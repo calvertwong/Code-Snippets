@@ -40,7 +40,8 @@ function errorHandler(errorText) {
 }
 
 /**
- * Check if third party modules such as react, react-dom exist in feature module and link them to this project's same third party modules to avoid conflict
+ * Check if third party modules such as react, react-dom exist in feature module and link them to this project's same third party modules to avoid conflict.
+ * Do npm install
  */
 function linkInterModules(moduleName, moduleDir, module) {
   if (shell.test("-e", `${moduleDir}/node_modules/${module}`)) {
