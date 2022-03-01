@@ -4,6 +4,9 @@ This repo is created as a reference to create a NPM package to share reusable co
 
 This feature module is technically a React application so it will be having `App.tsx` and `index.tsx` that can be use like what you have in a React application.
 
+# Take note
+Two `.npmrc` files must be setup, one in local machine and the other one in this repo in order to publish and download NPM package
+
 ## Tips 1
 The exported routes in `src/index.routes.tsx` will have no any effect on the route tree in `App.tsx` so you can develop this feature module independently without the container/parent module.
 
