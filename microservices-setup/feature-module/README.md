@@ -44,4 +44,4 @@ It is troublesome to execute `npm run generate-npm` manually every time. Downloa
 ```
 
 # Done reading? 
-Now head to microservies-setup/container-module to find out how to link modules together for development and more.
+Now head to microservices-setup/container-module to find out how to link modules together for development and more.
