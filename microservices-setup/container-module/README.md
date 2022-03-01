@@ -1,6 +1,6 @@
 # Overview
 
-This repo is created as a reference to setup a container to consume and develop feature modules for a micro-frontend application.
+This repo **(TypeScript)** is created as a reference to setup a container to consume and develop feature modules for a micro-frontend application.
 
 # Take note
 
