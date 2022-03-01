@@ -1,5 +1,3 @@
-**Read this**
-
 Assuming this feature module is a feature module, you will have something like `src/payment-module/pages`and here you will be adding your feature pages.
 Remember to export pages.
 
