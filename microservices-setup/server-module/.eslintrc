@@ -1,0 +1,26 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:@typescript-eslint/eslint-recommended"],
+  "rules": {
+    "@typescript-eslint/array-type": 1,
+    "@typescript-eslint/consistent-type-definitions": [1, "type"],
+    "@typescript-eslint/explicit-function-return-type" : 1,
+    "@typescript-eslint/no-empty-function": 1,
+    "@typescript-eslint/no-empty-interface": 1,
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/prefer-as-const": 1,
+    "@typescript-eslint/no-inferrable-types": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "prefer-const": 1,
+    "no-console": 1
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  }
+}
