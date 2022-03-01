@@ -28,6 +28,6 @@ The dist folder must be re-generated when there is a new change to the code. If 
 The production build that is generated here can be used too after executing `npm run link`. Tested and hosted on IIS Manager.
 
 # Done reading?
-Now head to microservices-setup/feature-module to find out how to start developing feature modules for this container and more/
+Now head to [microservices-setup/feature-module](https://github.com/calvertwong/TS-generic-code/tree/microservices/microservices-setup/feature-module) to find out how to start developing feature modules for this container and more/
 
 
