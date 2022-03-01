@@ -1,0 +1,125 @@
+{
+  "name": "@orgName/container",
+  "version": "0.1.0",
+  "description": "Container for orgName",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.37",
+    "@types/react": "^17.0.35",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-file-loader": "^2.0.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "react-refresh-typescript": "^2.0.3",
+    "react-scripts": "^5.0.0",
+    "shelljs": "^0.8.5",
+    "source-map-explorer": "^2.5.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --rootDir=__tests__",
+    "lint": "eslint . --ext .ts,.tsx",
+    "coverage": "react-scripts test --coverage",
+    "link": "node ./shell/link_script",
+    "unlink": "node ./shell/unlink_script",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
+  "husky": {
+    "hooks": {
+      "pre=commit": "npm run lint"
+    }
+  },
+  "vsc-organize-imports": {
+    "orderSpecifiers": true,
+    "orderSpecifiersAsSingleLine": true,
+    "baseUrl": "src",
+    "emptyLinesAfterImports": 1,
+    "emptyLinesBetweenFilledGroups": 1,
+    "groups": [
+      {
+        "groups": [
+          "global"
+        ],
+        "sortBy": "path",
+        "emptyLines": true
+      },
+      {
+        "groups": [
+          "absolute"
+        ],
+        "sortBy": "path",
+        "emptyLines": true
+      },
+      {
+        "groups": [
+          "relative"
+        ],
+        "sortBy": "path",
+        "emptyLines": true
+      },
+      {
+        "groups": [
+          "globalDirect",
+          "absoluteDirect",
+          "relativeDirect"
+        ],
+        "sortBy": "path",
+        "emptyLines": true
+      }
+    ]
+  }
+}
