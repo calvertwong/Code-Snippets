@@ -4,7 +4,7 @@ This repo is created as a reference to setup a container to consume and develop 
 
 # Take note
 
-If this repo is going to consume your own private npm modules, two .npmrc files must be setup, one in local machine and the other one in this repo in order to download the NPM modules.
+If this repo is going to consume your own private npm modules, two .npmrc files must be setup, one in local machine and the other one in this repo in order to download the NPM modules. (https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 The private NPM modules can be hosted on GitHub or locally in Verdaccio.
 
