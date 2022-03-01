@@ -2,7 +2,7 @@
 
 # Overview
 
-This directory will be the starting point of the npm package once the command to generate npm package is executed.
+This directory will be the root directory of the npm package along with some files from the upper level once the command to generate npm package is executed.
 `tsconfig.dist.json` will be sed to tell the compiler what to compile to the `dist` folder which will be generated later.
 
 If you understand what is going in the `generate_npm.js` script and `tsconfig.dist.json`, you will understand why the `dist` folder will look like:
