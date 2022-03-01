@@ -29,7 +29,7 @@ The script `npm run generate-npm` to generate the NPM package is in `package.jso
 ## Tips 7
 If the `dist` folder does not have the new changes, remove `dist` folder and run `npm run generate-npm` again. This happens when new file is being created or after removing a file.
 
-# Tips 8
+## Tips 8
 It is troublesome to execute `npm run generate-npm` manually every time. Download a VS Code extension called [`Run on Save`](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave). In VS Code's settings.json, add the below code to execute the command on save. 
 ```
 "emeraldwalk.runonsave": {
