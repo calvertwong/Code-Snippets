@@ -6,7 +6,7 @@ This directory will be the starting point of the npm package once the command to
 If you understand what is going in the `generate_npm.js` script and `tsconfig.dist.json`, you will understand why the `dist` folder will look like:
 
 dist\
-   |-- components\feature_name
+   |-- components\
    |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- GenericText.d.ts\
    |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- GenericText.js\
    |&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|-- index.d.ts\
