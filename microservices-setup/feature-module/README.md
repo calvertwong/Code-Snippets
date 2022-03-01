@@ -1,5 +1,3 @@
-**Read this**
-
 # Overview
 
 This repo is created as a reference to create a NPM package to share reusable code or to create a feature module for a micro-frontend application.
