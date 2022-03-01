@@ -20,5 +20,8 @@ Sample `.babelrc`, `eslint` files, `package.json`, `.gitignore`, and `.prettierr
 ## Tips 5
 The script `npm run generate-npm` to generate the NPM package is in `package.json` and the shell script is located in `shell` folder.
 
+## Tips 6
+`vsc-organize-imports` in `package.json` is an extension available in VS Code to organize imports. Install it!
+
 # Done reading? 
 Now head to microservies-setup/container-module to find out how to link modules together for development and more.
