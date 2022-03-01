@@ -1,5 +1,7 @@
 **Read this**
 
+# Overview
+
 This directory will be the starting point of the npm package once the command to generate npm package is executed.
 `tsconfig.dist.json` will be sed to tell the compiler what to compile to the `dist` folder which will be generated later.
 
