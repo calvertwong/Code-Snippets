@@ -13,7 +13,7 @@ The private NPM modules can be hosted on GitHub or locally in Verdaccio.
 - Execute `npm run link` to start linking local modules and dependencies
 - `npm start`
 
-# How to clear all local modules and dependencies symlinks
+# How to remove all local modules and dependencies symlinks
 
 - Execute `npm run unlink`
 
