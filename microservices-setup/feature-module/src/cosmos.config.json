@@ -1,0 +1,5 @@
+{
+  "staticPath": "public",
+  "publicUrl": "./",
+  "exportPath": "cosmos-export"
+}
