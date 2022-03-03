@@ -46,12 +46,6 @@ function errorHandler(errorText) {
 function linkInterModules(moduleName, moduleDir, module) {
   if (shell.test("-e", `${moduleDir}/node_modules/${module}`)) {
     printSuccess(`\n***** ${moduleName}'s ${module} linking to container's starts *****`);
-    if (shell.exec(`npm i`).code === SUCCESS) {
-      printSuccess(`${moduleName} npm install is completed. Success!`);
-      successArray.push(`${moduleName} npm install success!`);
-    } else {
-      errorHandler(`${moduleName} npm install failed!`);
-    }
     
     if (shell.exec(`npm link ${CONTAINER_MODULE}/node_modules/${module}`).code === SUCCESS) {
       printSuccess(`${moduleName} is linked to container's ${module}. Success!`);
@@ -73,6 +67,12 @@ function linkModule(moduleName, moduleDir, packageName) {
      * Start linking to feature module
      */
     if (shell.cd(moduleDir).code === SUCCESS) {
+      if (shell.exec(`npm i`).code === SUCCESS) {
+        printSuccess(`${moduleName} npm install is completed. Success!`);
+        successArray.push(`${moduleName} npm install success!`);
+      } else {
+        errorHandler(`${moduleName} npm install failed!`);
+      }
       /**
        * Create a symlink in global node_modules (code executed in feature folder)
        */
