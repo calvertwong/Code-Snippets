@@ -4,6 +4,8 @@ import {ModuleRoutes} from "some feature module"
   <Routes>
     <Route index element={<Navigate replace to="production-login" />} />
     <Route path="production-login" element={<ProductionLogin />} />
-    {ModuleRoutes}
+    
+    {* Refer to https://reactrouter.com/docs/en/v6/getting-started/overview, Descendant <Routes> *}
+    <Route path="someModuleName/*" element={<ModuleRoutes />} />
   </Routes>
 </BrowserRouter>
