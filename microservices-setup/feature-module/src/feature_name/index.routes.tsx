@@ -1,14 +1,14 @@
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import { SamplePage } from "./index";
 
 /**
 * Outcome will be something like this: http://localhost:3000/feature/sample-page
 */
-const FeatureRoutes = (
-  <Route path="feature">
+const FeatureRoutes = (): JSX.Element => (
+  <Routes>
     <Route path="sample-page" element={<SamplePage />} />,
-  </Route>
+  </Routes>
 );
 
 export { FeatureRoutes };
