@@ -2,4 +2,12 @@ node_modules
 dist
 .history
 shell
-build
+public
+babel.config.json
+.babelrc
+.env
+.eslintrc
+.gitignore
+.npmrc
+.prettierrc
+README.md
