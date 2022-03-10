@@ -1,12 +1,16 @@
+/**
+ * Remember to copy non-Typescript items manually
+ */
+
 var shell = require("shelljs");
 
-var startTime = new Date();
-shell.echo("Generating dist for npm......");
+shell.echo(`Removing dist contents......(${new Date()})`);
+shell.rm("-r", "dist/*");
+shell.echo(`Generating dist for npm`);
 shell.exec("tsc -p tsconfig.dist.json");
-shell.cp("-r", "./dist/src/feature_name/*", "./dist");
-shell.rm("-r", "./dist/src");
-var endTime = new Date();
 
-shell.echo(`dist is generated, done. Took ${(endTime - startTime) / 60000} mins`);
+shell.exec("copyfiles -u 1 src/**/*.css dist/src");
+
+shell.echo(`dist is generated, done......(${new Date()})`);
 
 shell.exit(0);
