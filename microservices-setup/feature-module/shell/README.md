@@ -18,11 +18,16 @@ A script that executes commands to generate a `dist` folder that can be used as 
 # What I have learnt
 - Removing the entire `dist` folder will crash the container or linked modules that executed `npm start`. The host of this module will yell when `dist`can no longer be detected upon deletion.
   - Resolution: remove `dist` contents only  
+  
 - The removal of contents in `dist` is neccessary to ensure the updated contents are new and accurate because:
   - New files might not be added to `dist`
   - Deleted files might remain in `dist`
 
 # Take note
 - Non-TypeScript items such as `images`, `*.css`, `*.bat` have to be manually copied over to `dist`. Refer to the line of code that copies in the script.
+ 
 - `entryFile.js` and `entryFile.d.ts` are the entry point of this module and will be renamed to `index.js` and `index.d.ts` so that the host can import this module like `import App from "@orgName/featureModule"`
+ 
 - The name `entryFile` is used because `index` cannot be used in `src`. The name `index` will conflict with `index.tsx` and the app will render a blank page only.
+
+- `package.dist.json` will be renamed to `package.json` in the `dist` folder and `npm publish` should be executed here so that only the `dist` contents will be pushed to the NPM repository but not the `dist` root folder. If `dist` root folder is pushed, `index` files will not be able grab `App` because of the wrong import path. 
