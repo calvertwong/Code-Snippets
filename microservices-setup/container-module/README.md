@@ -12,6 +12,7 @@ The private NPM modules can be hosted on GitHub or locally in Verdaccio.
 
 - Execute `npm run link` to start linking local modules and dependencies
 - `npm start`
+- Done. You don't need to do `npm install` and `npm link` in each feature modules, the link script here will do all that for you. Add or remove some module info as needed to the link and unlink script when a new module is added or removed, it should be rather simple and you just need to add or remove 2 lines of code. 
 
 # How to remove all local modules and dependencies symlinks
 
