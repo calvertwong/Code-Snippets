@@ -1,1 +1,0 @@
-export {GenericText} from "./GenericText"
