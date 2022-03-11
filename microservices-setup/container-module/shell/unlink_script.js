@@ -3,7 +3,7 @@ var shell = require("shelljs");
 var SAMPLE_MODULE_ONE = "../sample-module-one";
 var SAMPLE_MODULE_TWO = "../sample-module-two";
 
-var intermodules = ["react", "react-dom", "react-router", "react-router-dom"];
+var intermodules = ["react", "react-dom", "react-router-dom"];
 
 var SUCCESS = 0;
 
@@ -62,6 +62,20 @@ function unlinkInterModules(moduleName, moduleDir, module) {
   }
 }
 
+/**
+ * Unlink/remove symlink from global node module
+ */
+function unlinkInterModulesFromGlobal() {
+  for (let i = 0; i < intermodules.length; i++) {
+    if (shell.exec(`npm unlink ${intermodules[i]} -g`).code === SUCCESS) {
+      printSuccess(`${intermodules[i]} unlinked from global node module.\n`);
+      successArray.push(`Unlink ${intermodules[i]} from global node module success!`);
+    } else {
+      warningArray.push(`${intermodules[i]} is NOT FOUND in global node module, which is ok!`);
+    }
+  }
+}
+
 function unlinkModule(moduleName, moduleDir, packageName) {
   printBlueBG(`Unlink ${moduleName} begins`);
   /**
@@ -105,6 +119,7 @@ function unlinkModule(moduleName, moduleDir, packageName) {
 var startTime = new Date();
 unlinkModule("module tne", SAMPLE_MODULE_ONE, "@orgName/moduleOne");
 unlinkModule("module two", SAMPLE_MODULE_TWO, "@orgName/moduleTwo");
+unlinkInterModulesFromGlobal();
 var endTime = new Date();
 //======================= Add code here only (end) =======================
 
