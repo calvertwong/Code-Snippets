@@ -11,7 +11,7 @@ var SAMPLE_MODULE_TWO = "../sample-module-two";
 /**
 * This array consists of dependencies that feature modules shall being using from the container's because React doesn't allow a duplicate of some dependencies
 */
-var intermodules = ["react", "react-dom", "react-router", "react-router-dom"];
+var intermodules = ["react", "react-dom", "react-router-dom"];
 
 var SUCCESS = 0;
 
@@ -41,17 +41,25 @@ function errorHandler(errorText) {
 
 /**
  * Check if third party modules such as react, react-dom exist in feature module and link them to this project's same third party modules to avoid conflict.
- * Do npm install
  */
-function linkInterModules(moduleName, moduleDir, module) {
-  if (shell.test("-e", `${moduleDir}/node_modules/${module}`)) {
-    printSuccess(`\n***** ${moduleName}'s ${module} linking to container's starts *****`);
-    
-    if (shell.exec(`npm link ${CONTAINER_MODULE}/node_modules/${module}`).code === SUCCESS) {
-      printSuccess(`${moduleName} is linked to container's ${module}. Success!`);
-      successArray.push(`Link ${moduleName}'s ${module} to container's success!`);
+function linkInterModules(moduleName, moduleDir) {
+  var moduleString = "";
+  var moduleStringFullPath = "";
+
+  for (var i = 0; i < intermodules.length; i++) {
+    if (shell.test("-e", `${moduleDir}/node_modules/${intermodules[i]}`)) {
+      moduleString = moduleString.concat(`${intermodules[i]}, `);
+      moduleStringFullPath = moduleStringFullPath.concat(`${CONTAINER_MODULE}/node_modules/${intermodules[i]} `);
+    }
+  }
+  if (moduleString !== "") {
+    printSuccess(`\n***** ${moduleName}'s ${moduleString} linking to container's starts *****`);
+
+    if (shell.exec(`npm link ${moduleStringFullPath}`).code === SUCCESS) {
+      printSuccess(`${moduleName} is linked to container's ${moduleString}. Success!`);
+      successArray.push(`Link ${moduleName}'s ${moduleString}to container's success!`);
     } else {
-      errorHandler(`${moduleName}'s ${module} linking to container's failed!`);
+      errorHandler(`${moduleName}'s ${moduleString} linking to container's failed!`);
     }
   }
 }
@@ -73,6 +81,14 @@ function linkModule(moduleName, moduleDir, packageName) {
       } else {
         errorHandler(`${moduleName} npm install failed!`);
       }
+      
+      /**
+       * Generate dist folder in feature modules if dist doesn't exist
+       */
+      if (!shell.test("-e", "dist")) {
+        printSuccess(`Generating dist folder for ${packageName}......`);
+        shell.exec("npm run generate-npm");
+      }
       /**
        * Create a symlink in global node_modules (code executed in feature folder)
        */
@@ -80,9 +96,8 @@ function linkModule(moduleName, moduleDir, packageName) {
         /**
          * Read comments provided to this function
          */
-        for (var i = 0; i < intermodules.length; i++) {
-          linkInterModules(moduleName, moduleDir, intermodules[i]);
-        }
+         linkInterModules(moduleName, moduleDir);
+
         /**
          * Link feature module from this project
          */
