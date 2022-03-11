@@ -4,7 +4,7 @@ This repo **(TypeScript)** is created as a reference to create a NPM package to 
 
 This feature module is technically a React application so it will be having `App.tsx` and `index.tsx` that can be use like what you have in a React application. This repo is not a complete React app but is a repository for me to store all important files and code for such setup.
 
-To integrate this feature module to the host app, simply add the `App` of this feature module to the host's react router tree, done.
+To integrate this feature module to the host app, simply add the `App` of this feature module to the host's react router tree, done. The `App` can be found in `entryFile.ts` or `index.js` in `dist`. It can also be lazily loaded like `const featureApp = lazy(() => import("@orgName/featureName))` in the host app. 
 
 # Take note
 Two `.npmrc` files must be setup, one in local machine and the other one in this repo in order to publish and download NPM package if the package is published internally to Verdaccio or privately in GitHub etc.
