@@ -1,0 +1,16 @@
+1) Bash Beautify
+2) Color Highlight
+3) Convert text/code to a snippet
+4) Docker
+5) Eslint
+6) Git History
+7) GitLens
+8) JavaScript and TypeScript Nightly
+9) JSON to TS
+10) Local Hostory
+11) npm Intellisense
+12) Prettier - Code formatter
+13) Run on Save
+14) Sort lines
+15) Turbo Console Log
+16) vsc-organize-imports
