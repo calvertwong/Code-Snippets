@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: server
+    image: "server:${VERSION}"
+
+    build:
+      context: /.
+      dockerfile: dockerfile.server
+    ports:
+      - "3001:3001"
+
+  frontend:
+    container_name: frontend
+    image: "frontend:${VERSION}"
+    build:
+      context: /.
+      dockerfile: dockerfile.react
+    ports:
+      - "80:80"
+    stdin_open: true
+    tty: true
+
+
