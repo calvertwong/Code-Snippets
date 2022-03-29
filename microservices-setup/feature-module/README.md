@@ -9,7 +9,7 @@ To integrate this feature module to the host app, simply add the `App` of this f
 # Take note
 Two `.npmrc` files must be setup, one in local machine and the other one in this repo in order to publish and download NPM package if the package is published internally to Verdaccio or privately in GitHub etc.
 
-**Also**, images or anything that is not a typescript file have to be copied over to `dist` folder. Images will not be compiled hence they won't appear in `dist` folder by default. `cp` command if what you need and the script is available in `shell/generate_npm.js`.
+**Also**, images or anything that is not a typescript file has to be copied over to `dist` folder. Images will not be compiled hence they won't appear in `dist` folder by default. `cp` command if what you need and the script is available in `shell/generate_npm.js`.
 
 ## Tips 1
 The react router tree and react redux is being setup like in `index.tsx` and `App.tsx` to allow `App` being imported by the host app. The host app will have its own `<BrowserRouter>` or similar and it cannot accept a second `<BrwoserRouter>` from the feature module. Hence, I have moved the `<BrowserRouter>` to `index.tsx` to enable the feature module being developed independently without the host app. 
