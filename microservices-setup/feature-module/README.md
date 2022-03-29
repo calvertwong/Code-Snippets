@@ -15,7 +15,7 @@ Two `.npmrc` files must be setup, one in local machine and the other one in this
 The react router tree and react redux is being setup like in `index.tsx` and `App.tsx` to allow `App` being imported by the host app. The host app will have its own `<BrowserRouter>` or similar and it cannot accept a second `<BrwoserRouter>` from the feature module. Hence, I have moved the `<BrowserRouter>` to `index.tsx` to enable the feature module being developed independently without the host app. 
 
 ## Tips 1 cont'd
-React redux config in `App.tsx` is as such to enable react redux to work as expected when it is being used as a feature module. Moving the redux config to `index.tsx` will not work. 
+React redux config in `App.tsx` is as such to enable react redux to work as expected when it is being used as a feature module. Moving the redux config to `index.tsx` will not work. Each feature module will have its own redux store so the actual app will have more than one redux store because each feature is a separate entity.
 
 ## Tips 2
 **Storybook** and **react cosmos** are two great tools for developing components. This reference will be using **react cosmos**.\
