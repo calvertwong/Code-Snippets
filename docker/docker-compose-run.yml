@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: server
+    image: "server"
+
+    ports:
+      - "3001:3001"
+
+  frontend:
+    container_name: frontend
+    image: "frontend"
+    ports:
+      - "80:80"
+    stdin_open: true
+    tty: true
+
+  reports:
+    container_name: fileserver
+    image: "fileserver"
+    ports:
+      - "5050:5050"
+    stdin_open: true
+    tty: true
+
+
