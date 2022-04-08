@@ -2,5 +2,5 @@
 
 "docker-server": "docker build -f dockerfile.server -t server:latest .",
 "docker-frontend": "docker build -f dockerfile.react -t frontend:latest .",
-"docker-reports": "docker build -f dockerfile.reports -t fileserver:latest .",
-"docker-build": "npm run docker-server && npm run docker-frontend && npm run docker-reports && node ./docker-binary-dir"
+"docker-fileserver": "docker build -f dockerfile.fileserver -t fileserver:latest .",
+"docker-build": "npm run docker-server && npm run docker-frontend && npm run docker-fileserver && node ./docker-binary-dir"
