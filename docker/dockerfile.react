@@ -1,3 +1,4 @@
+# Linux container version
 FROM node:14 as build-stage
 WORKDIR /webapp
 COPY package*.json .
@@ -9,3 +10,9 @@ FROM nginx:stable
 COPY --from=build-stage /webapp/build /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
+
+# Windows container version (build folder has to be generated first)
+# FROM stefanscherer/node-windows
+# COPY build c:/build
+# RUN npm install -g serve
+# CMD serve -s build
