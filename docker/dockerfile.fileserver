@@ -1,3 +1,4 @@
+# Linux container version
 FROM node:14 as build-stage
 WORKDIR /.
 COPY . .
@@ -6,3 +7,8 @@ FROM nginx:stable
 COPY --from=build-stage source-folder destination-folder
 COPY nginx/nginx.fileserver.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
+
+# Windows container version
+# FROM stefanscherer/node-windows
+# COPY staticFiles c:\\static
+# CMD npx http-server c:\\static -p PORT_NUMBER
