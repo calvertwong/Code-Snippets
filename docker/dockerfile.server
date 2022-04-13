@@ -1,3 +1,4 @@
+# Linux container version
 FROM node:14
 WORKDIR /serverapp
 COPY package*.json .
@@ -5,3 +6,11 @@ RUN npm install
 RUN npm install pm2 -g
 COPY . .
 CMD ["pm2", "start", "npm", "--name", "server", "--", "run", "server"]
+
+# Windows container version
+# FROM stefanscherer/node-windows
+# COPY src/APIFiles c:\\API/
+# COPY package*.json c:\\API/
+# RUN npm install
+# RUN npm install -g pm2
+# CMD pm2 start c:\\API\server.js --no-daemon
