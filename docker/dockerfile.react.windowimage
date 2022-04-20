@@ -1,0 +1,4 @@
+FROM stefanscherer/node-windows:latest
+COPY build c:\\build
+RUN npm install -g serve
+ENTRYPOINT serve -s build
