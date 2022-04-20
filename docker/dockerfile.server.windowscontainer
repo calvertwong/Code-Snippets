@@ -1,0 +1,6 @@
+FROM stefanscherer/node-windows:latest
+COPY src/APIFiles c:\\API/
+COPY package.json c:\\API/
+RUN cd c:\\API/ && npm install
+RUN npm install -g pm2
+CMD pm2 start c:\\API\server.js --no-daemon
