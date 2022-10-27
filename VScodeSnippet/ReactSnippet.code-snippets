@@ -17,59 +17,104 @@
   // }
   "Hooks useState boolean": {
     "prefix": "stateBoolean",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<boolean>(false)",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<boolean>(false)",
+      "${0}"
+    ],
     "description": "useState boolean type"
   },
   "Hooks useState string": {
     "prefix": "stateString",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<string>('')",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<string>('')",
+      "${0}"
+    ],
     "description": "useState string type"
   },
   "Hooks useState number": {
     "prefix": "stateNumber",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<number>(0)",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<number>(0)",
+      "${0}"
+    ],
     "description": "useState number type"
   },
   "Hooks useState any": {
     "prefix": "stateAny",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<any>(null)",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<any>(null)",
+      "${0}"
+    ],
     "description": "useState any type"
   },
   "Hooks useState date": {
     "prefix": "stateDate",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Date>()",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Date>()",
+      "${0}"
+    ],
     "description": "useState date type"
   },
   "Hooks useState unknown": {
     "prefix": "stateUnknown",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<>(null)",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<unknown>()",
+      "${0}"
+    ],
     "description": "useState unknown type"
+  },
+  "Hooks useState object": {
+    "prefix": "stateObject",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<object>()",
+      "${0}"
+    ],
+    "description": "useState object type"
   },
   "Hooks useState array string": {
     "prefix": "stateArrayString",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Array<string>>([])",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<string[]>([])",
+      "${0}"
+    ],
     "description": "useState array string type"
   },
   "Hooks useState array number": {
-    "prefix": "stateArrayString",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Array<number>>([])",
+    "prefix": "stateArrayNumber",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<number[]>([])",
+      "${0}"
+    ],
     "description": "useState array number type"
+  },
+  "Hooks useState array boolean": {
+    "prefix": "stateArrayBoolean",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<boolean[]>([])",
+      "${0}"
+    ],
+    "description": "useState array boolean type"
   },
   "Hooks useState array any": {
     "prefix": "stateArrayAny",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Array<any>>([])",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<any[]>([])",
+      "${0}"
+    ],
     "description": "useState array any type"
   },
   "Hooks useState array unknown": {
     "prefix": "stateArrayUnknown",
-    "body": "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<Array<>>([])",
+    "body": [
+      "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState<unknown[]>([])",
+      "${0}"
+    ],
     "description": "useState array unknown type"
   },
   "Hooks useSelector": {
     "prefix": "reduxSelector",
-    "body": "const ${1} = useSelector((state: StateType) => state)"
+    "body": ["const ${1} = useSelector((state: StateType) => state)", "${0}"]
   },
-
   "Comment with author": {
     "prefix": "commentAuthor",
     "body": [
@@ -87,5 +132,32 @@
     "prefix": "afb",
     "body": "const ${1} = () => {}",
     "description": "arrow function boilerplate"
+  },
+  "Export local Arrow Function boilerplate": {
+    "prefix": "etlf",
+    "body": "export const ${1} = () => {}",
+    "description": "export arrow function boilerplate"
+  },
+  "Export file function boilerplate": {
+    "prefix": "etff",
+    "body": ["export const $TM_FILENAME_BASE = (${1}) => {", "  ${2}", "}"],
+    "description": "export file arrow function boilerplate"
+  },
+  "Export type boilerplate": {
+    "prefix": "et",
+    "body": ["export type $TM_FILENAME_BASE = {", "  ${1}: ${2}", "}"],
+    "description": ""
+  },
+  "Declare empty function as value boilerplate": {
+    "prefix": "efv",
+    "body": "() => { }"
+  },
+  "Export constant boilerplate": {
+    "prefix": "ec",
+    "body": [
+      "export const ${1/([^\\W]+)(\\W*)/${1:/upcase}${2:+_}/g} = \"${1}\"",
+      "${0}"
+    ],
+    "description": "Uppercase constant's variable name, replaces non-letters and non-numbers with underscore. (Warn: remove end underscore added by last non-letters or non-numbers)"
   }
 }
