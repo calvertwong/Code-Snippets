@@ -1,0 +1,49 @@
+name: Release-Docker-Deploy
+
+on:
+  push:
+    branches:
+      - 'releases/*'
+
+jobs:
+  deploy:
+    name: Run on ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v2
+
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Declare variables
+        run: |
+          # extract semver from branch name 
+          release_version=$(echo "${GITHUB_REF#refs/*/}" | sed -E 's/.*([vV][0-9]+\.[0-9]+\.[0-9]+).*/\1/')
+          echo "release_version=$release_version" >> $GITHUB_ENV
+          # add env variable called sha_short with the shorten commit hash as value
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag and push image to Amazon ECR
+        id: build-image-with-release-version
+        if: ${{env.release_version}}
+        run: |
+          # build docker image
+          npm run docker-build
+          # tag docker image so that the workflow knows where to push the image to
+          # "releases", semver and commit hash are appended for easy identification
+          # TODO: Replace appName with docker image
+          docker tag appName:latest ${{secrets.ECR_REPO_URI}}/${{secrets.ECR_REPO_NAME}}:releases-${{env.release_version}}-${{env.sha_short}}
+          docker push ${{secrets.ECR_REPO_URI}}/${{secrets.ECR_REPO_NAME}}:releases-${{env.release_version}}-${{env.sha_short}}
+          echo "name=image::${{secrets.ECR_REPO_URI}}/${{secrets.ECR_REPO_NAME}}:releases-${{env.release_version}}-${{env.sha_short}}" >> $GITHUB_OUTPUT
