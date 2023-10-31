@@ -1,4 +1,4 @@
-# A sample code that can be used to remove images within a pdf file (not tested for other types of file)
+# A sample code that can be used to remove images within a pdf file
 import fitz
 
 # Uncomment these two lines to use filepath from command line argument
