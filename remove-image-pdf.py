@@ -1,6 +1,10 @@
 # A sample code that can be used to remove images within a pdf file (not tested for other types of file)
 import fitz
 
+# Uncomment these two lines to use filepath from command line argument
+# filepath = sys.argv[1]
+# doc = fitz.open(filepath)
+
 doc = fitz.open("test.pdf")
 
 # focus on the last page of the pdf
