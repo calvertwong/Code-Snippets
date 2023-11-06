@@ -1,4 +1,5 @@
 # A sample code that can be used to remove images within a pdf file (technically the existing image got replaced with a transparent image that is very small)
+# PyMuPDF might need to be installed: pip install PyMuPDF
 import fitz
 import sys
 
