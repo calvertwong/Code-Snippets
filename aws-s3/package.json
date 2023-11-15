@@ -4,7 +4,8 @@
   "description": "",
   "main": "",
   "scripts": {
-    "s3-upload": "nodemon --exec npx ts-node s3-upload.ts"
+    "s3-upload": "nodemon --exec npx ts-node s3-upload.ts",
+    "s3-download": "nodemon --exec npx ts-node s3-download.ts"
   },
   "author": "",
   "license": "ISC",
