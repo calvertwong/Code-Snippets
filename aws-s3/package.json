@@ -6,7 +6,8 @@
   "scripts": {
     "s3-upload": "nodemon --exec npx ts-node s3-upload.ts",
     "s3-download": "nodemon --exec npx ts-node s3-download.ts",
-    "s3-delete": "nodemon --exec npx ts-node s3-delete.ts"
+    "s3-delete": "nodemon --exec npx ts-node s3-delete.ts",
+    "s3-getSignedUrl": "nodemon --exec npx ts-node s3-getSignedUrl.ts"
   },
   "author": "",
   "license": "ISC",
