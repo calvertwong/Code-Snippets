@@ -9,7 +9,7 @@ app.post(
   upload.array("single"),
   async function (req, res) {
     let numOfInfectedFiles = 0;
-    let infectedFileNames = [];
+    const infectedFileNames = [];
 
     // check if file is in the payload TODO in multer middleware
     let filePathChain = req.files.map((fileObj) => fileObj.path);
