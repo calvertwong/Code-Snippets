@@ -37,7 +37,7 @@ app.post("/s3-download", async function (req, res) {
     fileKeys !== undefined
   ) {
     try {
-      const downloadFromS3Calls: Promise<GetObjectCommandOutput>[] = req.body.fileKeys.map(
+      const downloadFromS3Calls: Promise<GetObjectCommandOutput>[] = fileKeys.map(
         async (fileKey: string) => {
           const params = {
             Bucket: process.env.S3_BUCKET_NAME,
