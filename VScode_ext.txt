@@ -7,10 +7,19 @@
 7) GitLens
 8) JavaScript and TypeScript Nightly
 9) JSON to TS
-10) Local Hostory
+10) Local History
 11) npm Intellisense
 12) Prettier - Code formatter
 13) Run on Save
 14) Sort lines
 15) Turbo Console Log
 16) vsc-organize-imports
+17) AWS Toolkit
+18) ES7+ React/Redux/React-Native Snippet
+19) Colorize
+20) Auto Rename Tag
+21) Code Spell Checker
+22) Typescript and JavaScript Language Features
+23) Better Comments
+23) Indent-rainbow
+24) node-snippets
