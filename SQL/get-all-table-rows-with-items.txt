@@ -1,2 +1,3 @@
 // Replace DATABASE_NAME with the target database name, keep the rest
+// Only tables with data will be displayed, to display all tables, remove "HAVING TOTAL_ROWS > 0;"
 SELECT TABLE_NAME, SUM(TABLE_ROWS) AS TOTAL_ROWS FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = "DATABASE_NAME" GROUP BY TABLE_NAME HAVING TOTAL_ROWS > 0;
