@@ -1,0 +1,24 @@
+[
+  {
+    "key": "ctrl+alt+l",
+    "command": "runCommands",
+    "when": "editorHasSelection",
+    "args": {
+      "commands": [
+        {
+          "command": "editor.action.clipboardCopyAction",
+        },
+        {
+          "command": "editor.action.insertLineAfter",
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "console.log('${TM_FILENAME} ~ Line ${TM_LINE_NUMBER} ~ Variable (${CLIPBOARD}): ', ${CLIPBOARD}$1)"
+          }
+        }
+      ]
+    }
+  }
+]
+    
