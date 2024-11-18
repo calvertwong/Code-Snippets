@@ -2,9 +2,9 @@
   "Turbo Console Log": {
     "scope": "javaascript, typescript",
     "prefix": "cl",
-    "body": {
+    "body": [
       "console.log('${TM_FILENAME} ~ Line ${TM_LINE_NUMBER} ~ Variable ($1): ', $1)"
-    },
+    ],
     "description": "Turbo console log"
   },
   "Hooks useState boolean": {
