@@ -1,0 +1,15 @@
+(() => {
+	const elems = Array.from(document.querySelectorAll(".strong"));
+	const percentages = elems
+		.map(el => {
+			const text = el.textContent.trim();
+			const match = text.match(/^(\d+(?:\.\d+)?)%$/);
+			return match ? parseFloat(match[1]) : null;
+		})
+		.filter(val => val !== null);
+
+	const sum = percentages.reduce((acc, val) => acc + val, 0);
+	const avg = sum / percentages.length;
+
+	console.log(`📈 Average Coverage: ${avg.toFixed(2)}%`);
+})();
